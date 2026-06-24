@@ -1,44 +1,72 @@
 import { useMemo, useState } from 'react';
+import MatrixRain from './components/MatrixRain';
+import TopBar from './components/TopBar';
+import Hero from './components/Hero';
+import { Catalog } from './components/Catalog';
 import { Results } from './components/Results';
 import { Wizard } from './components/Wizard';
 import { catalog } from './lib/catalog';
 import { recommend } from './lib/match';
 import type { Answers } from './lib/types';
 
+const TABS = [
+  { id: 'catalog', label: 'Catálogo' },
+  { id: 'finder', label: 'Encontrar solução' },
+] as const;
+
+type TabId = (typeof TABS)[number]['id'];
+
 export default function App() {
+  const [tab, setTab] = useState<TabId>('catalog');
   const [answers, setAnswers] = useState<Answers | null>(null);
 
   const results = useMemo(() => (answers ? recommend(catalog.solutions, answers) : []), [answers]);
 
   return (
-    <div className="mx-auto min-h-screen max-w-3xl px-4 py-10 sm:py-16">
-      <header className="mb-8">
-        <div className="flex items-center gap-3">
-          <img src={`${import.meta.env.BASE_URL}favicon.svg`} alt="" className="h-9 w-9" />
-          <div>
-            <h1 className="font-display text-2xl text-white">Soluções Cyber</h1>
-            <p className="text-sm text-slate-400">
-              Responda algumas perguntas e veja quais soluções de mercado se encaixam.
-            </p>
-          </div>
-        </div>
-      </header>
+    <div className="relative min-h-screen bg-grid-glow">
+      <MatrixRain />
+      <div className="relative z-10">
+        <TopBar />
 
-      <main>
-        {answers ? (
-          <Results results={results} answers={answers} onRestart={() => setAnswers(null)} />
-        ) : (
-          <Wizard onSubmit={setAnswers} />
-        )}
-      </main>
+        <main className="mx-auto w-full max-w-5xl px-4 py-10 lg:px-6">
+          <Hero />
 
-      <footer className="mt-12 border-t border-white/10 pt-5 text-xs text-slate-500">
-        <p>
-          {catalog.solutions.length} soluções · {catalog.categories.length} categorias · catálogo
-          atualizado em {catalog.generatedAt}. Tudo roda no seu navegador — nenhum dado é enviado a
-          servidores.
-        </p>
-      </footer>
+          <nav className="mb-6 flex flex-wrap justify-center gap-2">
+            {TABS.map((t) => (
+              <button
+                key={t.id}
+                type="button"
+                onClick={() => setTab(t.id)}
+                className={`rounded-lg px-4 py-1.5 font-display text-sm font-semibold transition ${
+                  tab === t.id
+                    ? 'bg-emerald-400/15 text-emerald-300'
+                    : 'text-slate-500 hover:text-slate-300'
+                }`}
+              >
+                {t.label}
+              </button>
+            ))}
+          </nav>
+
+          {tab === 'catalog' && <Catalog />}
+
+          {tab === 'finder' &&
+            (answers ? (
+              <div className="mx-auto max-w-3xl">
+                <Results results={results} answers={answers} onRestart={() => setAnswers(null)} />
+              </div>
+            ) : (
+              <div className="mx-auto max-w-3xl">
+                <Wizard onSubmit={setAnswers} />
+              </div>
+            ))}
+        </main>
+
+        <footer className="border-t border-emerald-500/10 py-6 text-center font-mono text-xs text-slate-600">
+          {catalog.solutions.length} soluções · catálogo atualizado em {catalog.generatedAt} · ©
+          2026 Sergio Bernardo
+        </footer>
+      </div>
     </div>
   );
 }

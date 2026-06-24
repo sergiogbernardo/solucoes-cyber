@@ -3,7 +3,7 @@ import type { ButtonHTMLAttributes, ReactNode } from 'react';
 
 export function Pill({ children }: { children: ReactNode }) {
   return (
-    <span className="inline-flex items-center rounded-full border border-white/10 bg-white/5 px-2.5 py-0.5 text-xs font-medium text-slate-300">
+    <span className="inline-flex items-center rounded-full border border-emerald-500/20 bg-emerald-500/5 px-2.5 py-0.5 text-xs font-medium text-emerald-200/90">
       {children}
     </span>
   );
@@ -25,8 +25,8 @@ export function Choice({ selected, onClick, title, subtitle }: ChoiceProps) {
       className={[
         'w-full rounded-xl border px-4 py-3 text-left transition',
         selected
-          ? 'border-accent/70 bg-accent/10 text-white shadow-[0_0_0_1px] shadow-accent/40'
-          : 'border-white/10 bg-white/5 text-slate-300 hover:border-white/25 hover:bg-white/10',
+          ? 'border-emerald-400/70 bg-emerald-400/10 text-white'
+          : 'border-white/10 bg-white/[0.03] text-slate-300 hover:border-emerald-400/30 hover:bg-white/[0.06]',
       ].join(' ')}
     >
       <span className="block font-medium">{title}</span>
@@ -52,8 +52,8 @@ export function Chip({
       className={[
         'rounded-full border px-3.5 py-1.5 text-sm font-medium transition',
         selected
-          ? 'border-accent/70 bg-accent/15 text-white'
-          : 'border-white/10 bg-white/5 text-slate-300 hover:border-white/25 hover:bg-white/10',
+          ? 'border-emerald-400/70 bg-emerald-400/15 text-white'
+          : 'border-white/10 bg-white/[0.03] text-slate-300 hover:border-emerald-400/30 hover:bg-white/[0.06]',
       ].join(' ')}
     >
       {children}
@@ -69,7 +69,7 @@ export function Button({
 }: ButtonHTMLAttributes<HTMLButtonElement> & { variant?: 'primary' | 'ghost' }) {
   const styles =
     variant === 'primary'
-      ? 'bg-accent text-ink-900 hover:bg-accent-soft disabled:opacity-40 disabled:hover:bg-accent'
+      ? 'bg-emerald-400 text-black hover:bg-emerald-300 disabled:opacity-40 disabled:hover:bg-emerald-400'
       : 'border border-white/15 text-slate-200 hover:bg-white/10 disabled:opacity-40';
   return (
     <button

@@ -12,8 +12,15 @@ Part of the [project hub](https://sergiogbernardo.github.io/), alongside
 
 ## How it works
 
-- **Guided wizard** — one question per matching dimension. Category is a hard
-  filter; the rest feed a weighted score.
+Two views, switchable by tab:
+
+- **Catálogo** (main) — the full, browsable catalog of every solution. Search by
+  product, vendor or category, filter by area and sort by market rating or name.
+- **Encontrar solução** — a guided wizard, one question per matching dimension,
+  that returns a ranked shortlist for your scenario.
+
+Under the hood:
+
 - **Matching engine** (`src/lib/match.ts`) — scores each solution 0–100 from:
   market rating, company-size↔tier fit, budget↔price fit, ecosystem match and
   compliance keywords. The market rating breaks ties. Pure, tested TypeScript.

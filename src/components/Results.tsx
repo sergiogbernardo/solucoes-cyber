@@ -7,7 +7,7 @@ function ResultCard({ item, rank }: { item: ScoredSolution; rank: number }) {
   const { solution, score, reasons, caveats } = item;
   const top = rank === 1;
   return (
-    <article className={`card animate-fade-up p-5 ${top ? 'ring-1 ring-accent/40' : ''}`}>
+    <article className={`panel ${top ? 'ring-1 ring-accent/40' : ''}`}>
       <div className="flex items-start justify-between gap-4">
         <div>
           <div className="flex items-center gap-2">
@@ -86,7 +86,7 @@ export function Results({
 }) {
   return (
     <div className="space-y-5">
-      <div className="card flex flex-wrap items-center justify-between gap-4 p-5">
+      <div className="panel flex flex-wrap items-center justify-between gap-4">
         <div>
           <h2 className="font-display text-xl text-white">
             Recomendações para <span className="text-accent">{answers.category}</span>
@@ -103,7 +103,7 @@ export function Results({
       </div>
 
       {results.length === 0 ? (
-        <div className="card p-8 text-center text-slate-400">
+        <div className="panel text-center text-slate-400">
           Não encontramos soluções catalogadas para <strong>{answers.category}</strong>.
         </div>
       ) : (

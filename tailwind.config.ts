@@ -12,23 +12,18 @@ export default {
       },
       colors: {
         accent: {
-          DEFAULT: '#38bdf8', // sky-400
-          soft: '#7dd3fc',
-        },
-        ink: {
-          900: '#0a0f1a',
-          800: '#0f1626',
-          700: '#1a2438',
+          DEFAULT: '#34d399', // emerald-400
+          soft: '#6ee7b7',
         },
       },
       keyframes: {
-        'fade-up': {
-          '0%': { opacity: '0', transform: 'translateY(8px)' },
-          '100%': { opacity: '1', transform: 'translateY(0)' },
+        'pulse-live': {
+          '0%, 100%': { opacity: '1' },
+          '50%': { opacity: '0.4' },
         },
       },
       animation: {
-        'fade-up': 'fade-up 0.4s ease-out both',
+        'pulse-live': 'pulse-live 1.4s ease-in-out infinite',
       },
     },
   },

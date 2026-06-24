@@ -71,7 +71,7 @@ export function Wizard({ onSubmit }: { onSubmit: (answers: Answers) => void }) {
   }
 
   return (
-    <div className="card animate-fade-up p-6 sm:p-8">
+    <div className="panel sm:p-8">
       <div className="mb-6 flex items-center gap-3">
         {STEP_TITLES.map((_, i) => (
           <span
@@ -96,7 +96,7 @@ export function Wizard({ onSubmit }: { onSubmit: (answers: Answers) => void }) {
               value={query}
               onChange={(e) => setQuery(e.target.value)}
               placeholder="Buscar (ex.: EDR, CMDB, SIEM, WAF…)"
-              className="mb-4 w-full rounded-xl border border-white/10 bg-ink-900/60 px-4 py-2.5 text-sm text-slate-200 outline-none placeholder:text-slate-500 focus:border-accent/60"
+              className="mb-4 w-full rounded-xl border border-white/10 bg-black/40 px-4 py-2.5 text-sm text-slate-200 outline-none placeholder:text-slate-500 focus:border-emerald-400/60"
             />
             <div className="max-h-[22rem] space-y-5 overflow-y-auto pr-1">
               {filteredGroups.map((entry) => (

@@ -4,20 +4,39 @@
 
 @layer base {
   html {
-    color-scheme: dark;
+    @apply scroll-smooth bg-black;
   }
 
   body {
-    @apply bg-ink-900 font-sans text-slate-200 antialiased;
-    background-image:
-      radial-gradient(60rem 40rem at 85% -10%, rgba(56, 189, 248, 0.1), transparent 60%),
-      radial-gradient(50rem 40rem at 0% 110%, rgba(99, 102, 241, 0.08), transparent 55%);
-    background-attachment: fixed;
+    @apply bg-black font-sans text-slate-100 antialiased;
+  }
+
+  ::selection {
+    @apply bg-emerald-400 text-black;
+  }
+
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: #334155 transparent;
+  }
+}
+
+@layer components {
+  .panel {
+    @apply rounded-2xl border border-emerald-500/15 bg-black/70 p-5 backdrop-blur-md;
+  }
+
+  .panel-title {
+    @apply font-display text-sm font-semibold uppercase tracking-wider text-emerald-300/80;
+  }
+
+  .field-label {
+    @apply mb-1.5 block font-mono text-xs uppercase tracking-wider text-slate-400;
   }
 }
 
 @layer utilities {
-  .card {
-    @apply rounded-2xl border border-white/10 bg-ink-800/70 backdrop-blur;
+  .bg-grid-glow {
+    background-image: radial-gradient(circle at 50% 0%, rgba(52, 211, 153, 0.1), transparent 60%);
   }
 }
