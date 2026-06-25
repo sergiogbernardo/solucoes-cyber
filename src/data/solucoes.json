@@ -457,6 +457,76 @@
         }
       ]
     },
+    "EPP": {
+      "summary": "Endpoint Protection Platform: previne malware e ameaças no endpoint — a evolução do antivírus corporativo.",
+      "capabilities": [
+        {
+          "id": "signature-detection",
+          "name": "Detecção por assinatura",
+          "desc": "Bloqueio de malware conhecido por assinaturas."
+        },
+        {
+          "id": "ngav",
+          "name": "NGAV / machine learning",
+          "desc": "Prevenção por aprendizado de máquina e heurística."
+        },
+        {
+          "id": "device-control",
+          "name": "Controle de dispositivos",
+          "desc": "Bloqueio de USB e periféricos."
+        },
+        {
+          "id": "app-control",
+          "name": "Controle de aplicações",
+          "desc": "Allowlisting/blocklisting de executáveis."
+        },
+        {
+          "id": "host-firewall",
+          "name": "Firewall de host",
+          "desc": "Firewall pessoal gerenciado centralmente."
+        },
+        {
+          "id": "central-management",
+          "name": "Gestão centralizada",
+          "desc": "Console único de políticas e status."
+        }
+      ]
+    },
+    "NDR": {
+      "summary": "Network Detection & Response: detecta ameaças pela análise do tráfego de rede e apoia a resposta.",
+      "capabilities": [
+        {
+          "id": "traffic-analysis",
+          "name": "Análise de tráfego",
+          "desc": "Inspeção de pacotes e fluxos, inclusive leste-oeste."
+        },
+        {
+          "id": "behavioral-detection",
+          "name": "Detecção comportamental",
+          "desc": "Anomalias e movimentação lateral."
+        },
+        {
+          "id": "encrypted-analysis",
+          "name": "Análise de tráfego cifrado",
+          "desc": "Detecção por metadados, sem descriptografar."
+        },
+        {
+          "id": "threat-intel",
+          "name": "Threat intelligence",
+          "desc": "Correlação com indicadores conhecidos."
+        },
+        {
+          "id": "response-integration",
+          "name": "Integração de resposta",
+          "desc": "Aciona firewall, NAC ou EDR."
+        },
+        {
+          "id": "forensics",
+          "name": "Forense de rede",
+          "desc": "Captura e timeline para investigação."
+        }
+      ]
+    },
     "SIEM": {
       "summary": "Security Information & Event Management: centraliza logs, correlaciona eventos e sustenta a detecção e a resposta do SOC.",
       "capabilities": [
@@ -497,6 +567,71 @@
         }
       ]
     },
+    "SOAR": {
+      "summary": "Security Orchestration, Automation & Response: orquestra ferramentas e automatiza a resposta a incidentes.",
+      "capabilities": [
+        {
+          "id": "playbooks",
+          "name": "Playbooks de automação",
+          "desc": "Fluxos automáticos de resposta a incidentes."
+        },
+        {
+          "id": "integrations",
+          "name": "Integrações (conectores)",
+          "desc": "Conexão com SIEM, EDR, ticketing e mais."
+        },
+        {
+          "id": "case-management",
+          "name": "Gestão de casos",
+          "desc": "Trilha de incidentes e colaboração do time."
+        },
+        {
+          "id": "enrichment",
+          "name": "Enriquecimento automático",
+          "desc": "Coleta de contexto (IoC, ativos, usuários)."
+        },
+        {
+          "id": "metrics",
+          "name": "Métricas (MTTR)",
+          "desc": "Indicadores de eficiência do SOC."
+        }
+      ]
+    },
+    "Firewall": {
+      "summary": "Next-Generation Firewall: controla o tráfego de rede por políticas, com inspeção em camada de aplicação.",
+      "capabilities": [
+        {
+          "id": "stateful-filtering",
+          "name": "Filtragem com estado",
+          "desc": "Controle de conexões por estado."
+        },
+        {
+          "id": "app-awareness",
+          "name": "Reconhecimento de aplicações",
+          "desc": "Políticas por aplicação (camada 7)."
+        },
+        {
+          "id": "ips",
+          "name": "IPS integrado",
+          "desc": "Prevenção de intrusão embutida."
+        },
+        {
+          "id": "tls-inspection",
+          "name": "Inspeção TLS",
+          "desc": "Visibilidade do tráfego cifrado."
+        },
+        {
+          "id": "url-filtering",
+          "name": "Filtragem de URL",
+          "desc": "Controle de acesso por categorias."
+        },
+        {
+          "id": "vpn",
+          "name": "VPN integrada",
+          "desc": "Túneis site-to-site e acesso remoto."
+        }
+      ]
+    },
     "WAF": {
       "summary": "Web Application Firewall: protege aplicações web inspecionando o tráfego HTTP/S contra ataques na camada de aplicação.",
       "capabilities": [
@@ -534,6 +669,891 @@
           "id": "custom-rules",
           "name": "Regras customizadas",
           "desc": "Criação de regras próprias para o contexto da aplicação."
+        }
+      ]
+    },
+    "ZTNA": {
+      "summary": "Zero Trust Network Access: dá acesso a aplicações por identidade e contexto, sem expor a rede.",
+      "capabilities": [
+        {
+          "id": "identity-based",
+          "name": "Acesso por identidade",
+          "desc": "Autorização baseada em usuário e identidade."
+        },
+        {
+          "id": "device-posture",
+          "name": "Postura do dispositivo",
+          "desc": "Avalia a conformidade do device antes do acesso."
+        },
+        {
+          "id": "app-segmentation",
+          "name": "Microssegmentação de apps",
+          "desc": "Acesso apenas ao recurso autorizado."
+        },
+        {
+          "id": "no-inbound",
+          "name": "Sem exposição de rede",
+          "desc": "Aplicações não ficam publicadas na internet."
+        },
+        {
+          "id": "continuous-auth",
+          "name": "Avaliação contínua",
+          "desc": "Reavalia o contexto durante a sessão."
+        }
+      ]
+    },
+    "CASB": {
+      "summary": "Cloud Access Security Broker: dá visibilidade e controle do uso de aplicações em nuvem (SaaS).",
+      "capabilities": [
+        {
+          "id": "shadow-it",
+          "name": "Descoberta de shadow IT",
+          "desc": "Identifica apps de nuvem não autorizados."
+        },
+        {
+          "id": "dlp",
+          "name": "DLP em nuvem",
+          "desc": "Proteção de dados sensíveis em SaaS."
+        },
+        {
+          "id": "access-control",
+          "name": "Controle de acesso",
+          "desc": "Políticas por usuário e contexto."
+        },
+        {
+          "id": "threat-protection",
+          "name": "Proteção contra ameaças",
+          "desc": "Malware e contas comprometidas em SaaS."
+        },
+        {
+          "id": "compliance",
+          "name": "Postura/compliance",
+          "desc": "Avalia configurações dos serviços de nuvem."
+        }
+      ]
+    },
+    "DLP": {
+      "summary": "Data Loss Prevention: descobre, classifica e impede o vazamento de dados sensíveis.",
+      "capabilities": [
+        {
+          "id": "discovery",
+          "name": "Descoberta de dados",
+          "desc": "Localiza dados sensíveis em repouso."
+        },
+        {
+          "id": "classification",
+          "name": "Classificação",
+          "desc": "Rotulagem por nível de sensibilidade."
+        },
+        {
+          "id": "endpoint-dlp",
+          "name": "DLP em endpoint",
+          "desc": "Controle em dispositivos (USB, impressão)."
+        },
+        {
+          "id": "network-dlp",
+          "name": "DLP em rede/e-mail",
+          "desc": "Inspeção dos canais de saída."
+        },
+        {
+          "id": "policy-enforcement",
+          "name": "Aplicação de políticas",
+          "desc": "Bloqueio, quarentena ou alerta."
+        },
+        {
+          "id": "incident-workflow",
+          "name": "Gestão de incidentes",
+          "desc": "Fluxo de tratamento de violações."
+        }
+      ]
+    },
+    "PAM": {
+      "summary": "Privileged Access Management: protege, controla e audita o uso de contas privilegiadas.",
+      "capabilities": [
+        {
+          "id": "vault",
+          "name": "Cofre de credenciais",
+          "desc": "Armazenamento seguro de segredos e senhas."
+        },
+        {
+          "id": "session-management",
+          "name": "Gestão de sessão",
+          "desc": "Mediação e gravação de sessões privilegiadas."
+        },
+        {
+          "id": "jit-access",
+          "name": "Acesso just-in-time",
+          "desc": "Elevação temporária de privilégio sob demanda."
+        },
+        {
+          "id": "rotation",
+          "name": "Rotação de senhas",
+          "desc": "Troca automática de credenciais."
+        },
+        {
+          "id": "least-privilege",
+          "name": "Menor privilégio",
+          "desc": "Controle granular de permissões."
+        },
+        {
+          "id": "audit",
+          "name": "Auditoria",
+          "desc": "Trilha completa de acessos privilegiados."
+        }
+      ]
+    },
+    "IAM": {
+      "summary": "Identity & Access Management: gerencia identidades e o acesso aos sistemas.",
+      "capabilities": [
+        {
+          "id": "authentication",
+          "name": "Autenticação",
+          "desc": "Verificação de identidade dos usuários."
+        },
+        {
+          "id": "sso",
+          "name": "SSO",
+          "desc": "Login único entre aplicações."
+        },
+        {
+          "id": "mfa",
+          "name": "MFA",
+          "desc": "Múltiplos fatores de autenticação."
+        },
+        {
+          "id": "lifecycle",
+          "name": "Ciclo de vida",
+          "desc": "Provisionamento e desprovisionamento de identidades."
+        },
+        {
+          "id": "rbac",
+          "name": "Controle de acesso (RBAC)",
+          "desc": "Permissões por papel."
+        },
+        {
+          "id": "federation",
+          "name": "Federação",
+          "desc": "Integração com provedores de identidade externos."
+        }
+      ]
+    },
+    "MFA": {
+      "summary": "Multi-Factor Authentication: reforça o login com fatores além da senha.",
+      "capabilities": [
+        {
+          "id": "otp",
+          "name": "OTP / TOTP",
+          "desc": "Códigos temporários de uso único."
+        },
+        {
+          "id": "push",
+          "name": "Push / app autenticador",
+          "desc": "Aprovação por aplicativo."
+        },
+        {
+          "id": "fido2",
+          "name": "FIDO2 / passkeys",
+          "desc": "Autenticação sem senha resistente a phishing."
+        },
+        {
+          "id": "biometrics",
+          "name": "Biometria",
+          "desc": "Fatores biométricos."
+        },
+        {
+          "id": "adaptive",
+          "name": "MFA adaptativo",
+          "desc": "Exigência conforme risco e contexto."
+        }
+      ]
+    },
+    "IGA": {
+      "summary": "Identity Governance & Administration: governa quem tem acesso a quê, com revisões e conformidade.",
+      "capabilities": [
+        {
+          "id": "provisioning",
+          "name": "Provisionamento",
+          "desc": "Concessão automática de acessos."
+        },
+        {
+          "id": "access-reviews",
+          "name": "Revisão de acessos",
+          "desc": "Recertificação periódica."
+        },
+        {
+          "id": "sod",
+          "name": "Segregação de funções (SoD)",
+          "desc": "Detecção de conflitos de acesso."
+        },
+        {
+          "id": "access-requests",
+          "name": "Solicitação de acesso",
+          "desc": "Fluxo de pedido e aprovação."
+        },
+        {
+          "id": "reporting",
+          "name": "Relatórios de conformidade",
+          "desc": "Evidências para auditoria."
+        }
+      ]
+    },
+    "NAC": {
+      "summary": "Network Access Control: controla quais dispositivos entram na rede e em que segmento.",
+      "capabilities": [
+        {
+          "id": "device-visibility",
+          "name": "Visibilidade de dispositivos",
+          "desc": "Inventário do que se conecta à rede."
+        },
+        {
+          "id": "authentication",
+          "name": "Autenticação 802.1X",
+          "desc": "Controle de admissão na rede."
+        },
+        {
+          "id": "posture-check",
+          "name": "Verificação de postura",
+          "desc": "Conformidade antes de admitir."
+        },
+        {
+          "id": "segmentation",
+          "name": "Segmentação dinâmica",
+          "desc": "VLAN/política por perfil de dispositivo."
+        },
+        {
+          "id": "guest-access",
+          "name": "Acesso de visitantes",
+          "desc": "Portal e isolamento de convidados."
+        }
+      ]
+    },
+    "SWG": {
+      "summary": "Secure Web Gateway: filtra o tráfego web de saída e protege a navegação contra ameaças.",
+      "capabilities": [
+        {
+          "id": "url-filtering",
+          "name": "Filtragem de URL",
+          "desc": "Bloqueio por categorias de site."
+        },
+        {
+          "id": "malware-inspection",
+          "name": "Inspeção de malware",
+          "desc": "Análise de downloads."
+        },
+        {
+          "id": "tls-inspection",
+          "name": "Inspeção TLS",
+          "desc": "Visibilidade do tráfego HTTPS."
+        },
+        {
+          "id": "app-control",
+          "name": "Controle de aplicações web",
+          "desc": "Políticas por app SaaS."
+        },
+        {
+          "id": "dlp",
+          "name": "DLP de saída",
+          "desc": "Inspeção de dados na navegação."
+        }
+      ]
+    },
+    "Email Security": {
+      "summary": "Gateway de segurança de e-mail: protege o correio contra phishing, spam e malware.",
+      "capabilities": [
+        {
+          "id": "antiphishing",
+          "name": "Antiphishing",
+          "desc": "Detecção de e-mails fraudulentos."
+        },
+        {
+          "id": "antimalware",
+          "name": "Antimalware / sandbox",
+          "desc": "Análise de anexos e links."
+        },
+        {
+          "id": "spam-filtering",
+          "name": "Antispam",
+          "desc": "Filtragem de spam."
+        },
+        {
+          "id": "url-protection",
+          "name": "Proteção de URL",
+          "desc": "Reescrita e inspeção de links no clique."
+        },
+        {
+          "id": "dmarc",
+          "name": "DMARC / SPF / DKIM",
+          "desc": "Autenticação de remetentes."
+        },
+        {
+          "id": "dlp",
+          "name": "DLP de e-mail",
+          "desc": "Prevenção de vazamento por e-mail."
+        }
+      ]
+    },
+    "DNS Protection": {
+      "summary": "Proteção de DNS: bloqueia o acesso a domínios maliciosos já na camada de DNS.",
+      "capabilities": [
+        {
+          "id": "domain-filtering",
+          "name": "Filtragem de domínios",
+          "desc": "Bloqueio por categoria e reputação."
+        },
+        {
+          "id": "threat-intel",
+          "name": "Threat intelligence",
+          "desc": "Domínios maliciosos conhecidos."
+        },
+        {
+          "id": "c2-blocking",
+          "name": "Bloqueio de C2",
+          "desc": "Corta comunicação de comando e controle."
+        },
+        {
+          "id": "reporting",
+          "name": "Visibilidade/relatórios",
+          "desc": "Logs de consultas DNS."
+        },
+        {
+          "id": "roaming",
+          "name": "Proteção off-network",
+          "desc": "Cobertura fora da rede corporativa."
+        }
+      ]
+    },
+    "CSPM": {
+      "summary": "Cloud Security Posture Management: avalia e corrige configurações inseguras em nuvem.",
+      "capabilities": [
+        {
+          "id": "misconfig-detection",
+          "name": "Detecção de misconfigurations",
+          "desc": "Falhas de configuração na nuvem."
+        },
+        {
+          "id": "compliance",
+          "name": "Frameworks de compliance",
+          "desc": "CIS, PCI, LGPD e outros."
+        },
+        {
+          "id": "multi-cloud",
+          "name": "Multi-cloud",
+          "desc": "Cobertura de AWS, Azure e GCP."
+        },
+        {
+          "id": "remediation",
+          "name": "Remediação",
+          "desc": "Correção guiada ou automática."
+        },
+        {
+          "id": "drift",
+          "name": "Detecção de desvio",
+          "desc": "Mudanças fora do baseline."
+        }
+      ]
+    },
+    "CWPP": {
+      "summary": "Cloud Workload Protection Platform: protege workloads (VMs, containers, serverless) em nuvem.",
+      "capabilities": [
+        {
+          "id": "vuln-scanning",
+          "name": "Varredura de vulnerabilidades",
+          "desc": "Em imagens e hosts."
+        },
+        {
+          "id": "runtime-protection",
+          "name": "Proteção em runtime",
+          "desc": "Detecção durante a execução."
+        },
+        {
+          "id": "container-security",
+          "name": "Segurança de containers",
+          "desc": "Hardening e controle de containers."
+        },
+        {
+          "id": "compliance",
+          "name": "Compliance",
+          "desc": "Verificação de políticas de segurança."
+        },
+        {
+          "id": "segmentation",
+          "name": "Segmentação de workload",
+          "desc": "Microssegmentação entre cargas."
+        }
+      ]
+    },
+    "DSPM": {
+      "summary": "Data Security Posture Management: descobre e protege dados sensíveis na nuvem.",
+      "capabilities": [
+        {
+          "id": "data-discovery",
+          "name": "Descoberta de dados",
+          "desc": "Localiza dados sensíveis na nuvem."
+        },
+        {
+          "id": "classification",
+          "name": "Classificação",
+          "desc": "Tipo e sensibilidade dos dados."
+        },
+        {
+          "id": "access-analysis",
+          "name": "Análise de acesso",
+          "desc": "Quem pode acessar quais dados."
+        },
+        {
+          "id": "risk-prioritization",
+          "name": "Priorização de risco",
+          "desc": "Exposições mais críticas primeiro."
+        },
+        {
+          "id": "compliance",
+          "name": "Compliance",
+          "desc": "Conformidade de dados."
+        }
+      ]
+    },
+    "SAST": {
+      "summary": "Static Application Security Testing: analisa o código-fonte em busca de vulnerabilidades.",
+      "capabilities": [
+        {
+          "id": "code-scanning",
+          "name": "Análise de código",
+          "desc": "Varredura do código-fonte."
+        },
+        {
+          "id": "language-coverage",
+          "name": "Cobertura de linguagens",
+          "desc": "Suporte a múltiplas linguagens."
+        },
+        {
+          "id": "ci-integration",
+          "name": "Integração CI/CD",
+          "desc": "Execução no pipeline."
+        },
+        {
+          "id": "ide-integration",
+          "name": "Integração na IDE",
+          "desc": "Feedback durante o desenvolvimento."
+        },
+        {
+          "id": "fp-triage",
+          "name": "Triagem de falsos positivos",
+          "desc": "Redução de ruído nos achados."
+        }
+      ]
+    },
+    "DAST": {
+      "summary": "Dynamic Application Security Testing: testa a aplicação em execução, de fora para dentro.",
+      "capabilities": [
+        {
+          "id": "runtime-scanning",
+          "name": "Varredura dinâmica",
+          "desc": "Testa a aplicação rodando."
+        },
+        {
+          "id": "auth-support",
+          "name": "Suporte a autenticação",
+          "desc": "Testes em áreas autenticadas."
+        },
+        {
+          "id": "ci-integration",
+          "name": "Integração CI/CD",
+          "desc": "Execução no pipeline."
+        },
+        {
+          "id": "api-testing",
+          "name": "Testes de API",
+          "desc": "Cobertura de endpoints de API."
+        },
+        {
+          "id": "reporting",
+          "name": "Relatórios",
+          "desc": "Evidências e severidade."
+        }
+      ]
+    },
+    "SCA": {
+      "summary": "Software Composition Analysis: identifica vulnerabilidades em dependências de terceiros.",
+      "capabilities": [
+        {
+          "id": "dependency-scanning",
+          "name": "Análise de dependências",
+          "desc": "Bibliotecas open source usadas."
+        },
+        {
+          "id": "vuln-database",
+          "name": "Base de vulnerabilidades",
+          "desc": "CVEs conhecidos das dependências."
+        },
+        {
+          "id": "license-compliance",
+          "name": "Conformidade de licenças",
+          "desc": "Riscos de licenciamento."
+        },
+        {
+          "id": "sbom",
+          "name": "Geração de SBOM",
+          "desc": "Inventário de componentes."
+        },
+        {
+          "id": "ci-integration",
+          "name": "Integração CI/CD",
+          "desc": "Execução no pipeline."
+        }
+      ]
+    },
+    "API Security": {
+      "summary": "Segurança de APIs: descobre, testa e protege APIs contra abuso e ataques.",
+      "capabilities": [
+        {
+          "id": "discovery",
+          "name": "Descoberta de APIs",
+          "desc": "Inventário de endpoints, inclusive shadow APIs."
+        },
+        {
+          "id": "owasp-api",
+          "name": "Proteção OWASP API Top 10",
+          "desc": "Ataques específicos de APIs."
+        },
+        {
+          "id": "runtime-protection",
+          "name": "Proteção em runtime",
+          "desc": "Bloqueio de abuso e anomalias."
+        },
+        {
+          "id": "schema-validation",
+          "name": "Validação de schema",
+          "desc": "Conformidade com a especificação."
+        },
+        {
+          "id": "rate-limiting",
+          "name": "Rate limiting",
+          "desc": "Controle de abuso e volumetria."
+        }
+      ]
+    },
+    "Container Security": {
+      "summary": "Segurança de containers: protege imagens, registries e workloads em containers e Kubernetes.",
+      "capabilities": [
+        {
+          "id": "image-scanning",
+          "name": "Varredura de imagens",
+          "desc": "Vulnerabilidades nas imagens."
+        },
+        {
+          "id": "registry-scanning",
+          "name": "Varredura de registry",
+          "desc": "Controle no repositório de imagens."
+        },
+        {
+          "id": "runtime-protection",
+          "name": "Proteção em runtime",
+          "desc": "Detecção durante a execução."
+        },
+        {
+          "id": "k8s-posture",
+          "name": "Postura de Kubernetes",
+          "desc": "Configuração segura do cluster."
+        },
+        {
+          "id": "admission-control",
+          "name": "Controle de admissão",
+          "desc": "Políticas no deploy."
+        }
+      ]
+    },
+    "Secrets Management": {
+      "summary": "Gestão de segredos: armazena e distribui chaves, tokens e senhas com segurança.",
+      "capabilities": [
+        {
+          "id": "secrets-vault",
+          "name": "Cofre de segredos",
+          "desc": "Armazenamento seguro centralizado."
+        },
+        {
+          "id": "dynamic-secrets",
+          "name": "Segredos dinâmicos",
+          "desc": "Credenciais de curta duração."
+        },
+        {
+          "id": "rotation",
+          "name": "Rotação automática",
+          "desc": "Troca periódica de segredos."
+        },
+        {
+          "id": "access-policy",
+          "name": "Políticas de acesso",
+          "desc": "Controle de quem acessa cada segredo."
+        },
+        {
+          "id": "audit",
+          "name": "Auditoria",
+          "desc": "Trilha de acesso a segredos."
+        }
+      ]
+    },
+    "Key Management": {
+      "summary": "Gestão de chaves criptográficas (KMS/HSM): cria, guarda e controla o ciclo de vida das chaves.",
+      "capabilities": [
+        {
+          "id": "key-generation",
+          "name": "Geração de chaves",
+          "desc": "Criação segura de chaves."
+        },
+        {
+          "id": "key-storage",
+          "name": "Armazenamento seguro",
+          "desc": "Cofre ou HSM para chaves."
+        },
+        {
+          "id": "rotation",
+          "name": "Rotação de chaves",
+          "desc": "Troca periódica de chaves."
+        },
+        {
+          "id": "access-control",
+          "name": "Controle de acesso",
+          "desc": "Políticas de uso das chaves."
+        },
+        {
+          "id": "audit",
+          "name": "Auditoria",
+          "desc": "Trilha de uso das chaves."
+        }
+      ]
+    },
+    "PKI/CLM": {
+      "summary": "PKI e gestão de ciclo de vida de certificados: emissão, renovação e revogação de certificados digitais.",
+      "capabilities": [
+        {
+          "id": "ca",
+          "name": "Autoridade certificadora",
+          "desc": "Emissão de certificados."
+        },
+        {
+          "id": "lifecycle",
+          "name": "Ciclo de vida",
+          "desc": "Emissão, renovação e revogação."
+        },
+        {
+          "id": "discovery",
+          "name": "Descoberta de certificados",
+          "desc": "Inventário do que está em uso."
+        },
+        {
+          "id": "automation",
+          "name": "Automação",
+          "desc": "Renovação automática (ACME e afins)."
+        },
+        {
+          "id": "expiry-alerts",
+          "name": "Alertas de expiração",
+          "desc": "Evita certificados vencidos."
+        }
+      ]
+    },
+    "Backup": {
+      "summary": "Backup e recuperação: cópias de segurança e restauração para resiliência e contra ransomware.",
+      "capabilities": [
+        {
+          "id": "scheduled-backup",
+          "name": "Backup agendado",
+          "desc": "Cópias automáticas e periódicas."
+        },
+        {
+          "id": "immutability",
+          "name": "Imutabilidade",
+          "desc": "Cópias à prova de adulteração."
+        },
+        {
+          "id": "granular-restore",
+          "name": "Restauração granular",
+          "desc": "Recuperar item, VM ou tudo."
+        },
+        {
+          "id": "offsite-cloud",
+          "name": "Cópia externa/nuvem",
+          "desc": "Resiliência geográfica."
+        },
+        {
+          "id": "ransomware-detection",
+          "name": "Detecção de ransomware",
+          "desc": "Alerta de anomalias nas cópias."
+        }
+      ]
+    },
+    "TVM": {
+      "summary": "Threat & Vulnerability Management: descobre, prioriza e acompanha a correção de vulnerabilidades.",
+      "capabilities": [
+        {
+          "id": "asset-discovery",
+          "name": "Descoberta de ativos",
+          "desc": "Inventário do que será avaliado."
+        },
+        {
+          "id": "vuln-scanning",
+          "name": "Varredura de vulnerabilidades",
+          "desc": "Identificação de falhas."
+        },
+        {
+          "id": "risk-prioritization",
+          "name": "Priorização por risco",
+          "desc": "Foco no que importa (exploit, exposição)."
+        },
+        {
+          "id": "remediation-tracking",
+          "name": "Acompanhamento de correção",
+          "desc": "Ciclo até a remediação."
+        },
+        {
+          "id": "reporting",
+          "name": "Relatórios / SLA",
+          "desc": "Métricas e prazos."
+        }
+      ]
+    },
+    "ASM": {
+      "summary": "Attack Surface Management: mapeia a superfície de ataque exposta na internet.",
+      "capabilities": [
+        {
+          "id": "external-discovery",
+          "name": "Descoberta externa",
+          "desc": "Ativos expostos, inclusive desconhecidos."
+        },
+        {
+          "id": "continuous-monitoring",
+          "name": "Monitoramento contínuo",
+          "desc": "Mudanças na superfície ao longo do tempo."
+        },
+        {
+          "id": "exposure-detection",
+          "name": "Detecção de exposições",
+          "desc": "Serviços e falhas expostas."
+        },
+        {
+          "id": "risk-prioritization",
+          "name": "Priorização de risco",
+          "desc": "Exposições mais críticas primeiro."
+        }
+      ]
+    },
+    "BAS": {
+      "summary": "Breach & Attack Simulation: simula ataques continuamente para validar as defesas.",
+      "capabilities": [
+        {
+          "id": "attack-simulation",
+          "name": "Simulação de ataques",
+          "desc": "Cenários de ataque realistas."
+        },
+        {
+          "id": "control-validation",
+          "name": "Validação de controles",
+          "desc": "Testa se as defesas detectam e bloqueiam."
+        },
+        {
+          "id": "mitre-mapping",
+          "name": "Mapeamento MITRE ATT&CK",
+          "desc": "Cobertura por técnica."
+        },
+        {
+          "id": "continuous-testing",
+          "name": "Testes contínuos",
+          "desc": "Execução recorrente."
+        },
+        {
+          "id": "reporting",
+          "name": "Relatórios de lacunas",
+          "desc": "Onde melhorar a postura."
+        }
+      ]
+    },
+    "Threat Intelligence": {
+      "summary": "Threat Intelligence: coleta e operacionaliza inteligência sobre ameaças.",
+      "capabilities": [
+        {
+          "id": "ioc-feeds",
+          "name": "Feeds de IoC",
+          "desc": "Indicadores de comprometimento."
+        },
+        {
+          "id": "enrichment",
+          "name": "Enriquecimento",
+          "desc": "Contexto para alertas e investigações."
+        },
+        {
+          "id": "integration",
+          "name": "Integração",
+          "desc": "Envio a SIEM, SOAR e firewall."
+        },
+        {
+          "id": "actor-tracking",
+          "name": "Rastreamento de atores",
+          "desc": "TTPs e campanhas de adversários."
+        },
+        {
+          "id": "reporting",
+          "name": "Relatórios",
+          "desc": "Boletins e alertas."
+        }
+      ]
+    },
+    "MDM": {
+      "summary": "Mobile Device Management: gerencia e protege dispositivos móveis e o conteúdo corporativo.",
+      "capabilities": [
+        {
+          "id": "enrollment",
+          "name": "Enrolamento",
+          "desc": "Registro e provisionamento de dispositivos."
+        },
+        {
+          "id": "policy-enforcement",
+          "name": "Aplicação de políticas",
+          "desc": "Senha, criptografia e restrições."
+        },
+        {
+          "id": "remote-wipe",
+          "name": "Apagar remotamente",
+          "desc": "Limpeza em caso de perda ou roubo."
+        },
+        {
+          "id": "app-management",
+          "name": "Gestão de apps",
+          "desc": "Distribuição e controle de aplicativos."
+        },
+        {
+          "id": "compliance",
+          "name": "Conformidade",
+          "desc": "Avaliação da postura do dispositivo."
+        }
+      ]
+    },
+    "Anti-DDoS": {
+      "summary": "Proteção contra DDoS: mitiga ataques volumétricos e de aplicação para manter a disponibilidade.",
+      "capabilities": [
+        {
+          "id": "volumetric-mitigation",
+          "name": "Mitigação volumétrica",
+          "desc": "Absorve grandes volumes (L3/L4)."
+        },
+        {
+          "id": "app-layer",
+          "name": "Proteção camada 7",
+          "desc": "Ataques na camada de aplicação."
+        },
+        {
+          "id": "always-on",
+          "name": "Always-on / sob demanda",
+          "desc": "Modos de proteção contínua ou acionada."
+        },
+        {
+          "id": "traffic-scrubbing",
+          "name": "Scrubbing de tráfego",
+          "desc": "Limpeza do tráfego malicioso."
+        },
+        {
+          "id": "reporting",
+          "name": "Relatórios",
+          "desc": "Visibilidade dos ataques."
         }
       ]
     },
