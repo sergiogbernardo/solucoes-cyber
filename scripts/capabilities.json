@@ -1009,5 +1009,735 @@
         "desc": "Padronização e qualidade contínua dos dados."
       }
     ]
+  },
+  "Zero Trust": {
+    "summary": "Zero Trust: arquitetura que nunca confia por padrão e verifica continuamente cada acesso.",
+    "capabilities": [
+      {
+        "id": "never-trust",
+        "name": "Nunca confiar, sempre verificar",
+        "desc": "Nenhum acesso é confiável por padrão."
+      },
+      {
+        "id": "identity-centric",
+        "name": "Centrado em identidade",
+        "desc": "Acesso por identidade e contexto."
+      },
+      {
+        "id": "least-privilege",
+        "name": "Menor privilégio",
+        "desc": "Concede apenas o acesso mínimo necessário."
+      },
+      {
+        "id": "microsegmentation",
+        "name": "Microssegmentação",
+        "desc": "Isola recursos para conter ameaças."
+      },
+      {
+        "id": "continuous-verification",
+        "name": "Verificação contínua",
+        "desc": "Reavalia o acesso durante a sessão."
+      }
+    ]
+  },
+  "Proteção de Identidade": {
+    "summary": "Proteção de identidade (ITDR): detecta e responde a ameaças baseadas em identidade.",
+    "capabilities": [
+      { "id": "risk-detection", "name": "Detecção de risco", "desc": "Logins e contas de risco." },
+      {
+        "id": "compromise-detection",
+        "name": "Detecção de comprometimento",
+        "desc": "Contas comprometidas."
+      },
+      {
+        "id": "behavioral-analytics",
+        "name": "Análise comportamental",
+        "desc": "Anomalias de identidade."
+      },
+      {
+        "id": "automated-response",
+        "name": "Resposta automatizada",
+        "desc": "Bloqueio ou reautenticação forçada."
+      },
+      {
+        "id": "directory-protection",
+        "name": "Proteção de diretório",
+        "desc": "Ataques a Active Directory / IdP."
+      }
+    ]
+  },
+  "Acesso Condicional": {
+    "summary": "Acesso condicional: concede ou nega acesso conforme risco, identidade e contexto.",
+    "capabilities": [
+      {
+        "id": "risk-evaluation",
+        "name": "Avaliação de risco",
+        "desc": "Decisão baseada em sinais de risco."
+      },
+      {
+        "id": "device-conditions",
+        "name": "Condições de dispositivo",
+        "desc": "Exige device gerenciado e conforme."
+      },
+      {
+        "id": "location-conditions",
+        "name": "Condições de local/rede",
+        "desc": "Políticas por localização ou IP."
+      },
+      {
+        "id": "mfa-enforcement",
+        "name": "Exigência de MFA",
+        "desc": "Solicita MFA conforme o contexto."
+      },
+      {
+        "id": "session-controls",
+        "name": "Controles de sessão",
+        "desc": "Limita ou monitora a sessão."
+      }
+    ]
+  },
+  "SSO": {
+    "summary": "Single Sign-On: um único login dá acesso a várias aplicações.",
+    "capabilities": [
+      { "id": "federation", "name": "Federação", "desc": "SAML, OIDC e OAuth." },
+      {
+        "id": "app-integrations",
+        "name": "Integrações de apps",
+        "desc": "Catálogo de aplicações suportadas."
+      },
+      {
+        "id": "session-management",
+        "name": "Gestão de sessão",
+        "desc": "Sessão única e logout central."
+      },
+      { "id": "mfa-integration", "name": "Integração com MFA", "desc": "Reforço no login." },
+      { "id": "directory-integration", "name": "Integração com diretório", "desc": "AD/LDAP." }
+    ]
+  },
+  "CIAM": {
+    "summary": "Customer IAM: gestão de identidade para clientes e usuários externos.",
+    "capabilities": [
+      {
+        "id": "registration",
+        "name": "Cadastro / onboarding",
+        "desc": "Registro de usuários finais."
+      },
+      { "id": "social-login", "name": "Login social", "desc": "Autenticação via IdPs sociais." },
+      { "id": "mfa", "name": "MFA", "desc": "Fatores adicionais para clientes." },
+      {
+        "id": "consent-privacy",
+        "name": "Consentimento e privacidade",
+        "desc": "Gestão de consentimento (LGPD)."
+      },
+      {
+        "id": "scalability",
+        "name": "Escalabilidade",
+        "desc": "Suporta grandes volumes de usuários."
+      }
+    ]
+  },
+  "VPN": {
+    "summary": "VPN: cria túneis cifrados para acesso remoto seguro à rede.",
+    "capabilities": [
+      { "id": "encryption", "name": "Criptografia de túnel", "desc": "Tráfego cifrado fim a fim." },
+      { "id": "remote-access", "name": "Acesso remoto", "desc": "Conexão segura de usuários." },
+      { "id": "site-to-site", "name": "Site-to-site", "desc": "Interliga redes e filiais." },
+      { "id": "mfa-integration", "name": "Integração com MFA", "desc": "Reforço na autenticação." },
+      {
+        "id": "split-tunneling",
+        "name": "Split tunneling",
+        "desc": "Controla o que passa pelo túnel."
+      }
+    ]
+  },
+  "IPS": {
+    "summary": "Intrusion Prevention System: detecta e bloqueia ataques no tráfego de rede em tempo real.",
+    "capabilities": [
+      {
+        "id": "signature-detection",
+        "name": "Detecção por assinatura",
+        "desc": "Ataques conhecidos."
+      },
+      {
+        "id": "anomaly-detection",
+        "name": "Detecção de anomalias",
+        "desc": "Comportamento suspeito."
+      },
+      {
+        "id": "inline-blocking",
+        "name": "Bloqueio inline",
+        "desc": "Interrompe o ataque em tempo real."
+      },
+      {
+        "id": "threat-intel",
+        "name": "Threat intelligence",
+        "desc": "Atualização contínua de ameaças."
+      },
+      { "id": "reporting", "name": "Relatórios", "desc": "Eventos e alertas." }
+    ]
+  },
+  "Proxy": {
+    "summary": "Proxy: intermedeia o tráfego para filtrar, cachear e controlar o acesso.",
+    "capabilities": [
+      { "id": "forward-proxy", "name": "Forward proxy", "desc": "Saída controlada dos usuários." },
+      { "id": "url-filtering", "name": "Filtragem de URL", "desc": "Controle por categoria." },
+      { "id": "caching", "name": "Cache", "desc": "Otimização de tráfego." },
+      { "id": "ssl-inspection", "name": "Inspeção SSL", "desc": "Visibilidade de HTTPS." },
+      { "id": "access-logging", "name": "Registro de acesso", "desc": "Logs de navegação." }
+    ]
+  },
+  "SD-WAN": {
+    "summary": "Software-Defined WAN: otimiza e protege a conectividade entre sites com gestão centralizada.",
+    "capabilities": [
+      {
+        "id": "path-selection",
+        "name": "Seleção de caminho",
+        "desc": "Roteamento dinâmico por aplicação."
+      },
+      {
+        "id": "centralized-management",
+        "name": "Gestão centralizada",
+        "desc": "Orquestração de políticas."
+      },
+      { "id": "encryption", "name": "Criptografia", "desc": "Túneis seguros entre sites." },
+      {
+        "id": "app-awareness",
+        "name": "Reconhecimento de aplicações",
+        "desc": "QoS por aplicação."
+      },
+      {
+        "id": "integrated-security",
+        "name": "Segurança integrada",
+        "desc": "Firewall/IPS embutidos (rumo a SASE)."
+      }
+    ]
+  },
+  "Microsegmentação": {
+    "summary": "Microssegmentação: isola cargas de trabalho com políticas granulares para conter movimentação lateral.",
+    "capabilities": [
+      {
+        "id": "workload-isolation",
+        "name": "Isolamento de workloads",
+        "desc": "Segmentação fina entre cargas."
+      },
+      {
+        "id": "policy-automation",
+        "name": "Políticas automatizadas",
+        "desc": "Baseadas em identidade e tags."
+      },
+      {
+        "id": "east-west",
+        "name": "Visibilidade leste-oeste",
+        "desc": "Tráfego interno entre cargas."
+      },
+      {
+        "id": "lateral-prevention",
+        "name": "Bloqueio de movimentação lateral",
+        "desc": "Contém propagação de ameaças."
+      },
+      { "id": "multi-environment", "name": "Multi-ambiente", "desc": "On-prem e nuvem." }
+    ]
+  },
+  "Wireless Security": {
+    "summary": "Segurança wireless: protege redes sem fio contra acesso indevido e ataques.",
+    "capabilities": [
+      { "id": "wpa-enterprise", "name": "WPA2/WPA3-Enterprise", "desc": "Autenticação robusta." },
+      {
+        "id": "rogue-ap-detection",
+        "name": "Detecção de AP rogue",
+        "desc": "Pontos de acesso não autorizados."
+      },
+      { "id": "wips", "name": "WIPS", "desc": "Prevenção de intrusão wireless." },
+      {
+        "id": "guest-isolation",
+        "name": "Isolamento de visitantes",
+        "desc": "Rede de convidados separada."
+      },
+      { "id": "segmentation", "name": "Segmentação", "desc": "VLAN/política por SSID." }
+    ]
+  },
+  "CIEM": {
+    "summary": "Cloud Infrastructure Entitlement Management: governa permissões e identidades na nuvem.",
+    "capabilities": [
+      {
+        "id": "entitlement-visibility",
+        "name": "Visibilidade de permissões",
+        "desc": "Mapeia quem pode o quê na nuvem."
+      },
+      {
+        "id": "least-privilege",
+        "name": "Menor privilégio",
+        "desc": "Reduz permissões excessivas."
+      },
+      { "id": "multi-cloud", "name": "Multi-cloud", "desc": "AWS, Azure e GCP." },
+      {
+        "id": "anomaly-detection",
+        "name": "Detecção de anomalias",
+        "desc": "Uso indevido de permissões."
+      },
+      { "id": "remediation", "name": "Remediação", "desc": "Ajuste de políticas IAM." }
+    ]
+  },
+  "IaC Security": {
+    "summary": "Segurança de Infraestrutura como Código: analisa templates IaC antes do provisionamento.",
+    "capabilities": [
+      {
+        "id": "template-scanning",
+        "name": "Análise de templates",
+        "desc": "Terraform, CloudFormation etc."
+      },
+      {
+        "id": "misconfig-detection",
+        "name": "Detecção de misconfigurations",
+        "desc": "Falhas antes do deploy."
+      },
+      { "id": "policy-as-code", "name": "Política como código", "desc": "Regras versionadas." },
+      { "id": "ci-integration", "name": "Integração CI/CD", "desc": "Execução no pipeline." },
+      { "id": "remediation", "name": "Remediação", "desc": "Sugestões de correção." }
+    ]
+  },
+  "RASP": {
+    "summary": "Runtime Application Self-Protection: protege a aplicação de dentro, em tempo de execução.",
+    "capabilities": [
+      {
+        "id": "runtime-monitoring",
+        "name": "Monitoramento em runtime",
+        "desc": "Visão de dentro da aplicação."
+      },
+      {
+        "id": "attack-blocking",
+        "name": "Bloqueio de ataques",
+        "desc": "Injeção e exploração em tempo real."
+      },
+      {
+        "id": "self-protection",
+        "name": "Autoproteção",
+        "desc": "Reage sem depender de agente externo."
+      },
+      {
+        "id": "low-false-positive",
+        "name": "Baixo falso positivo",
+        "desc": "Usa o contexto de execução."
+      },
+      {
+        "id": "app-integration",
+        "name": "Integração à aplicação",
+        "desc": "Embute na runtime da app."
+      }
+    ]
+  },
+  "SBOM": {
+    "summary": "Software Bill of Materials: inventaria os componentes de software para transparência e gestão de risco.",
+    "capabilities": [
+      { "id": "generation", "name": "Geração de SBOM", "desc": "Formatos SPDX e CycloneDX." },
+      {
+        "id": "component-inventory",
+        "name": "Inventário de componentes",
+        "desc": "Dependências e versões."
+      },
+      {
+        "id": "vulnerability-mapping",
+        "name": "Mapeamento de vulnerabilidades",
+        "desc": "CVEs por componente."
+      },
+      {
+        "id": "license-tracking",
+        "name": "Controle de licenças",
+        "desc": "Riscos de licenciamento."
+      },
+      { "id": "ci-integration", "name": "Integração CI/CD", "desc": "Geração no pipeline." }
+    ]
+  },
+  "Secrets Scanning": {
+    "summary": "Varredura de segredos: encontra credenciais expostas em código e repositórios.",
+    "capabilities": [
+      {
+        "id": "repo-scanning",
+        "name": "Varredura de repositórios",
+        "desc": "Código e histórico de commits."
+      },
+      {
+        "id": "pattern-detection",
+        "name": "Detecção de padrões",
+        "desc": "Chaves, tokens e senhas."
+      },
+      { "id": "pre-commit", "name": "Verificação pré-commit", "desc": "Bloqueia antes de subir." },
+      { "id": "ci-integration", "name": "Integração CI/CD", "desc": "Execução no pipeline." },
+      { "id": "remediation", "name": "Remediação", "desc": "Alertas e orientação de rotação." }
+    ]
+  },
+  "APM": {
+    "summary": "Application Performance Monitoring: monitora desempenho e disponibilidade de aplicações.",
+    "capabilities": [
+      {
+        "id": "tracing",
+        "name": "Tracing distribuído",
+        "desc": "Rastreia requisições entre serviços."
+      },
+      {
+        "id": "metrics",
+        "name": "Métricas de desempenho",
+        "desc": "Latência, throughput e erros."
+      },
+      {
+        "id": "error-tracking",
+        "name": "Rastreamento de erros",
+        "desc": "Captura e agrupa exceções."
+      },
+      { "id": "alerting", "name": "Alertas", "desc": "Notifica anomalias de performance." },
+      { "id": "dashboards", "name": "Dashboards", "desc": "Visualização da saúde da aplicação." }
+    ]
+  },
+  "Monitoramento": {
+    "summary": "Monitoramento: acompanha disponibilidade, integridade e eventos da infraestrutura.",
+    "capabilities": [
+      {
+        "id": "availability",
+        "name": "Monitoramento de disponibilidade",
+        "desc": "Uptime de serviços."
+      },
+      { "id": "metrics", "name": "Métricas", "desc": "Coleta de indicadores." },
+      { "id": "alerting", "name": "Alertas", "desc": "Notificações de incidentes." },
+      { "id": "dashboards", "name": "Dashboards", "desc": "Visualização do estado." },
+      {
+        "id": "log-integration",
+        "name": "Integração de logs",
+        "desc": "Correlação com logs e eventos."
+      }
+    ]
+  },
+  "Criptografia": {
+    "summary": "Criptografia: protege dados em repouso e em trânsito por cifragem.",
+    "capabilities": [
+      { "id": "at-rest", "name": "Criptografia em repouso", "desc": "Cifra dados armazenados." },
+      {
+        "id": "in-transit",
+        "name": "Criptografia em trânsito",
+        "desc": "Cifra dados em movimento."
+      },
+      {
+        "id": "key-management",
+        "name": "Gestão de chaves",
+        "desc": "Controle das chaves de cifragem."
+      },
+      { "id": "algorithms", "name": "Algoritmos padrão", "desc": "AES, RSA, ECC e afins." },
+      {
+        "id": "fips",
+        "name": "Conformidade (FIPS)",
+        "desc": "Validação de módulos criptográficos."
+      }
+    ]
+  },
+  "Descoberta de Dados": {
+    "summary": "Descoberta de dados: localiza onde os dados sensíveis estão.",
+    "capabilities": [
+      {
+        "id": "scanning",
+        "name": "Varredura de repositórios",
+        "desc": "Bancos, arquivos e nuvem."
+      },
+      {
+        "id": "pattern-matching",
+        "name": "Reconhecimento de padrões",
+        "desc": "Tipos de dado sensível."
+      },
+      { "id": "coverage", "name": "Cobertura ampla", "desc": "On-prem e nuvem." },
+      { "id": "mapping", "name": "Mapeamento", "desc": "Onde e em que volume." },
+      { "id": "reporting", "name": "Relatórios", "desc": "Resultado da descoberta." }
+    ]
+  },
+  "Classificação de Dados": {
+    "summary": "Classificação de dados: rotula dados por sensibilidade para orientar a proteção.",
+    "capabilities": [
+      {
+        "id": "auto-classification",
+        "name": "Classificação automática",
+        "desc": "Rotulagem baseada em conteúdo."
+      },
+      {
+        "id": "labeling",
+        "name": "Rótulos de sensibilidade",
+        "desc": "Marcação manual ou automática."
+      },
+      {
+        "id": "policy-integration",
+        "name": "Integração com políticas",
+        "desc": "Aciona DLP/criptografia por rótulo."
+      },
+      {
+        "id": "pattern-matching",
+        "name": "Padrões e regex",
+        "desc": "Identificação de tipos de dado."
+      },
+      { "id": "reporting", "name": "Relatórios", "desc": "Inventário por classificação." }
+    ]
+  },
+  "Data Governance": {
+    "summary": "Governança de dados: políticas, qualidade e controle sobre o ciclo de vida dos dados.",
+    "capabilities": [
+      { "id": "catalog", "name": "Catálogo de dados", "desc": "Inventário e metadados." },
+      { "id": "lineage", "name": "Linhagem de dados", "desc": "Rastreia origem e fluxo." },
+      { "id": "quality", "name": "Qualidade de dados", "desc": "Regras e monitoramento." },
+      {
+        "id": "access-policy",
+        "name": "Políticas de acesso",
+        "desc": "Controle de uso dos dados."
+      },
+      { "id": "compliance", "name": "Compliance", "desc": "Conformidade regulatória." }
+    ]
+  },
+  "NDLP": {
+    "summary": "DLP de rede: inspeciona o tráfego de saída para impedir o vazamento de dados.",
+    "capabilities": [
+      {
+        "id": "traffic-inspection",
+        "name": "Inspeção de tráfego",
+        "desc": "Canais de saída (web, e-mail)."
+      },
+      {
+        "id": "content-detection",
+        "name": "Detecção de conteúdo",
+        "desc": "Dados sensíveis em trânsito."
+      },
+      {
+        "id": "policy-enforcement",
+        "name": "Aplicação de políticas",
+        "desc": "Bloqueio ou alerta."
+      },
+      {
+        "id": "ssl-inspection",
+        "name": "Inspeção SSL",
+        "desc": "Visibilidade de tráfego cifrado."
+      },
+      {
+        "id": "incident-reporting",
+        "name": "Relatório de incidentes",
+        "desc": "Registro de violações."
+      }
+    ]
+  },
+  "RMS": {
+    "summary": "Gestão de direitos de informação (IRM/RMS): protege documentos com criptografia e políticas de uso.",
+    "capabilities": [
+      {
+        "id": "document-encryption",
+        "name": "Criptografia de documentos",
+        "desc": "Protege o próprio arquivo."
+      },
+      {
+        "id": "usage-policies",
+        "name": "Políticas de uso",
+        "desc": "Ler, editar, imprimir, encaminhar."
+      },
+      {
+        "id": "access-revocation",
+        "name": "Revogação de acesso",
+        "desc": "Retira acesso mesmo após o envio."
+      },
+      { "id": "tracking", "name": "Rastreamento de uso", "desc": "Quem acessou o documento." },
+      { "id": "integration", "name": "Integração", "desc": "Office, e-mail e fluxos de trabalho." }
+    ]
+  },
+  "Tokenização": {
+    "summary": "Tokenização: substitui dados sensíveis por tokens sem valor, reduzindo o escopo de exposição.",
+    "capabilities": [
+      {
+        "id": "token-substitution",
+        "name": "Substituição por token",
+        "desc": "Troca o dado por um token."
+      },
+      { "id": "vault", "name": "Cofre de tokens", "desc": "Mapeia token e dado original." },
+      {
+        "id": "format-preserving",
+        "name": "Preserva formato",
+        "desc": "Mantém o formato (ex.: cartão)."
+      },
+      {
+        "id": "pci-scope",
+        "name": "Redução de escopo PCI",
+        "desc": "Tira dados de cartão do ambiente."
+      },
+      {
+        "id": "detokenization-control",
+        "name": "Controle de destokenização",
+        "desc": "Define quem pode reverter."
+      }
+    ]
+  },
+  "Mascaramento": {
+    "summary": "Mascaramento de dados: oculta dados sensíveis preservando o formato para uso seguro.",
+    "capabilities": [
+      {
+        "id": "static-masking",
+        "name": "Mascaramento estático",
+        "desc": "Em cópias e ambientes não-produtivos."
+      },
+      { "id": "dynamic-masking", "name": "Mascaramento dinâmico", "desc": "Em tempo de consulta." },
+      { "id": "format-preserving", "name": "Preserva formato", "desc": "Mantém o tipo do dado." },
+      { "id": "role-based", "name": "Por papel", "desc": "Exibição conforme a permissão." },
+      {
+        "id": "reversibility",
+        "name": "Controle de reversão",
+        "desc": "Define o que é reversível."
+      }
+    ]
+  },
+  "OT Security": {
+    "summary": "Segurança OT/ICS: protege ambientes industriais (SCADA, PLC) de forma abrangente.",
+    "capabilities": [
+      {
+        "id": "asset-visibility",
+        "name": "Visibilidade de ativos",
+        "desc": "Inventário do parque OT."
+      },
+      {
+        "id": "threat-detection",
+        "name": "Detecção de ameaças",
+        "desc": "Ataques a ambientes industriais."
+      },
+      { "id": "segmentation", "name": "Segmentação IT/OT", "desc": "Isolamento de zonas." },
+      {
+        "id": "vulnerability-management",
+        "name": "Gestão de vulnerabilidades",
+        "desc": "Falhas em ativos OT."
+      },
+      {
+        "id": "safety-aware",
+        "name": "Foco em disponibilidade/safety",
+        "desc": "Sem interromper a operação."
+      }
+    ]
+  },
+  "OT Firewall": {
+    "summary": "Firewall OT: segmenta e controla o tráfego em redes industriais entendendo protocolos OT.",
+    "capabilities": [
+      {
+        "id": "ot-protocol-awareness",
+        "name": "Reconhecimento de protocolos OT",
+        "desc": "Inspeção de protocolos industriais."
+      },
+      { "id": "segmentation", "name": "Segmentação IT/OT", "desc": "Separa zonas e conduítes." },
+      { "id": "dpi", "name": "Deep packet inspection", "desc": "Inspeção profunda de comandos." },
+      { "id": "access-control", "name": "Controle de acesso", "desc": "Políticas por zona." },
+      { "id": "ruggedized", "name": "Hardware industrial", "desc": "Opera em ambiente OT." }
+    ]
+  },
+  "OT Asset Discovery": {
+    "summary": "Descoberta de ativos OT: identifica e inventaria dispositivos industriais (ICS/SCADA).",
+    "capabilities": [
+      {
+        "id": "passive-discovery",
+        "name": "Descoberta passiva",
+        "desc": "Sem impactar a operação."
+      },
+      { "id": "asset-inventory", "name": "Inventário de ativos", "desc": "Dispositivos OT/ICS." },
+      {
+        "id": "protocol-support",
+        "name": "Suporte a protocolos OT",
+        "desc": "Modbus, DNP3 e afins."
+      },
+      {
+        "id": "fingerprinting",
+        "name": "Identificação de dispositivos",
+        "desc": "Fabricante, modelo e firmware."
+      },
+      { "id": "visibility", "name": "Visibilidade", "desc": "Mapa do parque OT." }
+    ]
+  },
+  "OT Inventory": {
+    "summary": "Inventário OT: mantém o cadastro atualizado dos ativos e do firmware industrial.",
+    "capabilities": [
+      {
+        "id": "asset-catalog",
+        "name": "Catálogo de ativos",
+        "desc": "Lista central de ativos OT."
+      },
+      {
+        "id": "firmware-tracking",
+        "name": "Controle de firmware",
+        "desc": "Versões e atualizações."
+      },
+      {
+        "id": "vulnerability-mapping",
+        "name": "Mapeamento de vulnerabilidades",
+        "desc": "CVEs por ativo."
+      },
+      { "id": "change-tracking", "name": "Controle de mudanças", "desc": "Alterações no parque." },
+      { "id": "reporting", "name": "Relatórios", "desc": "Visão do inventário." }
+    ]
+  },
+  "OT Monitoring": {
+    "summary": "Monitoramento OT: detecta anomalias e ameaças em redes industriais.",
+    "capabilities": [
+      {
+        "id": "passive-monitoring",
+        "name": "Monitoramento passivo",
+        "desc": "Sem afetar os processos."
+      },
+      {
+        "id": "anomaly-detection",
+        "name": "Detecção de anomalias",
+        "desc": "Comportamento fora do padrão."
+      },
+      { "id": "threat-detection", "name": "Detecção de ameaças", "desc": "Ataques a ICS/SCADA." },
+      {
+        "id": "protocol-analysis",
+        "name": "Análise de protocolos OT",
+        "desc": "Comandos industriais."
+      },
+      { "id": "alerting", "name": "Alertas", "desc": "Notificação de incidentes OT." }
+    ]
+  },
+  "OT Segmentation": {
+    "summary": "Segmentação OT: separa redes industriais em zonas e conduítes (modelo Purdue).",
+    "capabilities": [
+      { "id": "zone-conduit", "name": "Zonas e conduítes", "desc": "Modelo de segmentação OT." },
+      {
+        "id": "it-ot-separation",
+        "name": "Separação IT/OT",
+        "desc": "Isola corporativo do industrial."
+      },
+      {
+        "id": "policy-enforcement",
+        "name": "Aplicação de políticas",
+        "desc": "Controle entre zonas."
+      },
+      {
+        "id": "lateral-prevention",
+        "name": "Bloqueio de movimentação lateral",
+        "desc": "Contém propagação."
+      },
+      { "id": "visibility", "name": "Visibilidade de fluxos", "desc": "Tráfego entre zonas." }
+    ]
+  },
+  "Suite": {
+    "summary": "Suíte de segurança: reúne vários componentes (e-mail, endpoint, identidade) num só licenciamento.",
+    "capabilities": [
+      {
+        "id": "multi-component",
+        "name": "Múltiplos componentes",
+        "desc": "Cobre várias áreas num produto só."
+      },
+      {
+        "id": "unified-management",
+        "name": "Gestão unificada",
+        "desc": "Console e políticas integrados."
+      },
+      {
+        "id": "native-integration",
+        "name": "Integração nativa",
+        "desc": "Componentes que conversam entre si."
+      },
+      {
+        "id": "consolidated-licensing",
+        "name": "Licenciamento consolidado",
+        "desc": "Um pacote, vários recursos."
+      },
+      {
+        "id": "breadth-vs-depth",
+        "name": "Amplitude x profundidade",
+        "desc": "Cobre muito, nem sempre best-of-breed."
+      }
+    ]
   }
 }
