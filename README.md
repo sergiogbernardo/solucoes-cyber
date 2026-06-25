@@ -15,9 +15,24 @@ Part of the [project hub](https://sergiogbernardo.github.io/), alongside
 Two views, switchable by tab:
 
 - **Catálogo** (main) — the full, browsable catalog of every solution. Search by
-  product, vendor or category, filter by area and sort by market rating or name.
+  product, vendor or category, filter by area and sort. Each card expands the
+  component's reference checklist ("what an EDR must do"). Pick 2–4 solutions to
+  **compare side by side** — attributes, illustrative annual cost per seat and
+  the component capability matrix.
 - **Encontrar solução** — a guided wizard, one question per matching dimension,
-  that returns a ranked shortlist for your scenario.
+  that returns a ranked shortlist for your scenario, with an illustrative cost
+  estimate, a **shareable link** and **print/PDF** export.
+
+### Component capabilities
+
+`scripts/capabilities.json` defines, per component, the canonical capability
+checklist (reference) and — where we have a trustworthy mapping — which solutions
+support each one (`yes` / `partial` / `no`). EDR ships fully mapped as the worked
+example; other components show the reference checklist only. We never invent
+per-vendor support: unmapped solutions render as `—`.
+
+> The cost figures are **illustrative bands** derived from the coarse price tier
+> ($/$$/$$$), not real quotes — always validate with the vendor.
 
 Under the hood:
 

@@ -1,13 +1,24 @@
 // Main view: the full, browsable catalog of market solutions. Search by name,
-// vendor or category, filter by area (group), and sort.
+// vendor or category, filter by area (group), sort, and pick solutions to
+// compare. Each card can expand the component's reference capability checklist.
 import { useMemo, useState } from 'react';
-import { catalog, groupLabel } from '../lib/catalog';
+import { catalog, componentSpec, groupLabel } from '../lib/catalog';
 import type { Solution } from '../lib/types';
 import { Chip, Pill, RatingDots } from './ui';
+import { CapabilityChecklist } from './CapabilityMatrix';
 
 type SortKey = 'rating' | 'name';
 
-function SolutionCard({ solution }: { solution: Solution }) {
+function SolutionCard({
+  solution,
+  selected,
+  onToggleSelect,
+}: {
+  solution: Solution;
+  selected: boolean;
+  onToggleSelect: (id: string) => void;
+}) {
+  const spec = componentSpec(solution.category);
   return (
     <article className="panel flex flex-col gap-3">
       <div className="flex items-start justify-between gap-3">
@@ -20,28 +31,59 @@ function SolutionCard({ solution }: { solution: Solution }) {
 
       <p className="text-sm text-slate-300">{solution.description}</p>
 
-      <div className="mt-auto flex flex-wrap items-center gap-2 pt-1">
+      <div className="flex flex-wrap items-center gap-2 pt-1">
         <Pill>{solution.category}</Pill>
         <Pill>{solution.tier}</Pill>
         <Pill>{solution.priceRange}</Pill>
         <span className="font-mono text-xs text-slate-500">{groupLabel(solution.group)}</span>
       </div>
 
-      {solution.website && (
-        <a
-          href={solution.website}
-          target="_blank"
-          rel="noreferrer noopener"
-          className="text-sm font-medium text-emerald-400 hover:text-emerald-300"
-        >
-          Site do fornecedor →
-        </a>
+      {spec && (
+        <details className="group rounded-xl border border-white/10 bg-white/[0.02] px-3 py-2">
+          <summary className="cursor-pointer list-none text-sm font-medium text-emerald-300/90">
+            O que um {solution.category} faz
+            <span className="ml-1 text-slate-500 group-open:hidden">▾</span>
+            <span className="ml-1 hidden text-slate-500 group-open:inline">▴</span>
+          </summary>
+          <p className="mb-3 mt-2 text-xs text-slate-400">{spec.summary}</p>
+          <CapabilityChecklist spec={spec} />
+        </details>
       )}
+
+      <div className="mt-auto flex items-center justify-between pt-1">
+        {solution.website ? (
+          <a
+            href={solution.website}
+            target="_blank"
+            rel="noreferrer noopener"
+            className="text-sm font-medium text-emerald-400 hover:text-emerald-300"
+          >
+            Site do fornecedor →
+          </a>
+        ) : (
+          <span />
+        )}
+        <label className="flex cursor-pointer items-center gap-2 text-sm text-slate-300">
+          <input
+            type="checkbox"
+            checked={selected}
+            onChange={() => onToggleSelect(solution.id)}
+            className="h-4 w-4 accent-emerald-400"
+          />
+          Comparar
+        </label>
+      </div>
     </article>
   );
 }
 
-export function Catalog() {
+export function Catalog({
+  selectedIds,
+  onToggleSelect,
+}: {
+  selectedIds: string[];
+  onToggleSelect: (id: string) => void;
+}) {
   const [query, setQuery] = useState('');
   const [group, setGroup] = useState<string | null>(null);
   const [sort, setSort] = useState<SortKey>('rating');
@@ -116,7 +158,12 @@ export function Catalog() {
       ) : (
         <div className="grid gap-4 sm:grid-cols-2">
           {filtered.map((s) => (
-            <SolutionCard key={s.id} solution={s} />
+            <SolutionCard
+              key={s.id}
+              solution={s}
+              selected={selectedIds.includes(s.id)}
+              onToggleSelect={onToggleSelect}
+            />
           ))}
         </div>
       )}

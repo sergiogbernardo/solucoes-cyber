@@ -40,3 +40,25 @@
     background-image: radial-gradient(circle at 50% 0%, rgba(52, 211, 153, 0.1), transparent 60%);
   }
 }
+
+/* Readable output when exporting the recommendation to PDF (print). */
+@media print {
+  html,
+  body {
+    background: #fff !important;
+    color: #0f172a !important;
+  }
+
+  .panel {
+    border: 1px solid #cbd5e1 !important;
+    background: #fff !important;
+    backdrop-filter: none !important;
+    break-inside: avoid;
+  }
+
+  .panel *,
+  .panel h2,
+  .panel h3 {
+    color: #0f172a !important;
+  }
+}

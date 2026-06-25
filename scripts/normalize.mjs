@@ -165,6 +165,35 @@ for (const s of solutions) {
   seen.add(s.id);
 }
 
+// --- Component capabilities --------------------------------------------------
+// Reference checklist per component ("what an EDR must do") plus per-solution
+// support, where we have it. componentCapabilities holds the public dictionary;
+// per-solution support is attached to the matching solution as capabilitySupport.
+const capabilities = JSON.parse(readFileSync(join(here, 'capabilities.json'), 'utf8'));
+const solutionById = new Map(solutions.map((s) => [s.id, s]));
+const componentCapabilities = {};
+
+for (const [category, def] of Object.entries(capabilities)) {
+  const capIds = new Set(def.capabilities.map((c) => c.id));
+  componentCapabilities[category] = { summary: def.summary, capabilities: def.capabilities };
+
+  for (const [solutionId, support] of Object.entries(def.solutions ?? {})) {
+    const solution = solutionById.get(solutionId);
+    if (!solution) throw new Error(`capabilities.json: unknown solution id ${solutionId}`);
+    if (solution.category !== category) {
+      throw new Error(`capabilities.json: ${solutionId} is not in category ${category}`);
+    }
+    for (const capId of Object.keys(support)) {
+      if (!capIds.has(capId)) {
+        throw new Error(
+          `capabilities.json: ${category}/${solutionId} references unknown capability ${capId}`,
+        );
+      }
+    }
+    solution.capabilitySupport = support;
+  }
+}
+
 const categoryCounts = new Map();
 for (const s of solutions) {
   const key = s.category;
@@ -185,6 +214,7 @@ const out = {
     'cyber-architecture/backend/src/db/tools-seed-data.json (snapshot) + scripts/extra-solutions.json',
   groups,
   categories,
+  componentCapabilities,
   solutions,
 };
 

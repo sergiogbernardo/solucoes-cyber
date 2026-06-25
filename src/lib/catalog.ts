@@ -2,12 +2,15 @@
 // the UI needs: category list grouped by area, and the most common vendors for
 // the optional "ecosystem" question.
 import data from '../data/solucoes.json';
-import type { Catalog, CategoryInfo, GroupInfo } from './types';
+import type { Catalog, CategoryInfo, ComponentSpec, GroupInfo } from './types';
 
 export const catalog = data as Catalog;
 
 export const groupLabel = (id: string): string =>
   catalog.groups.find((g: GroupInfo) => g.id === id)?.label ?? 'Outros';
+
+export const componentSpec = (category: string): ComponentSpec | undefined =>
+  catalog.componentCapabilities[category];
 
 export interface CategoryGroup {
   group: GroupInfo;

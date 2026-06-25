@@ -1,0 +1,209 @@
+{
+  "EDR": {
+    "summary": "Endpoint Detection & Response: detecta, investiga e responde a ameaças nos endpoints, indo além do antivírus tradicional.",
+    "capabilities": [
+      {
+        "id": "behavioral-detection",
+        "name": "Detecção comportamental",
+        "desc": "Identifica ameaças pelo comportamento (TTPs), não só por assinatura."
+      },
+      {
+        "id": "ngav",
+        "name": "Antivírus de próxima geração (NGAV)",
+        "desc": "Prevenção integrada de malware no próprio endpoint."
+      },
+      {
+        "id": "host-isolation",
+        "name": "Isolamento de host",
+        "desc": "Contém o endpoint comprometido, cortando o acesso à rede."
+      },
+      {
+        "id": "auto-remediation",
+        "name": "Remediação / rollback",
+        "desc": "Reverte automaticamente alterações maliciosas (ex.: ransomware)."
+      },
+      {
+        "id": "threat-hunting",
+        "name": "Threat hunting",
+        "desc": "Busca proativa com consultas sobre a telemetria coletada."
+      },
+      {
+        "id": "siem-integration",
+        "name": "Integração com SIEM/SOC",
+        "desc": "Envia telemetria e alertas para SIEM/SOC."
+      },
+      {
+        "id": "automated-response",
+        "name": "Resposta automatizada",
+        "desc": "Ações e playbooks automáticos diante de um incidente."
+      },
+      {
+        "id": "cross-platform",
+        "name": "Cobertura multiplataforma",
+        "desc": "Agente para Windows, macOS e Linux."
+      }
+    ],
+    "solutions": {
+      "crowdstrike-falcon-insight-xdr": {
+        "behavioral-detection": "yes",
+        "ngav": "yes",
+        "host-isolation": "yes",
+        "auto-remediation": "partial",
+        "threat-hunting": "yes",
+        "siem-integration": "yes",
+        "automated-response": "yes",
+        "cross-platform": "yes"
+      },
+      "sentinelone-singularity-complete": {
+        "behavioral-detection": "yes",
+        "ngav": "yes",
+        "host-isolation": "yes",
+        "auto-remediation": "yes",
+        "threat-hunting": "yes",
+        "siem-integration": "yes",
+        "automated-response": "yes",
+        "cross-platform": "yes"
+      },
+      "microsoft-microsoft-defender-for-endpoint": {
+        "behavioral-detection": "yes",
+        "ngav": "yes",
+        "host-isolation": "yes",
+        "auto-remediation": "partial",
+        "threat-hunting": "yes",
+        "siem-integration": "yes",
+        "automated-response": "yes",
+        "cross-platform": "yes"
+      },
+      "palo-alto-networks-cortex-xdr": {
+        "behavioral-detection": "yes",
+        "ngav": "yes",
+        "host-isolation": "yes",
+        "auto-remediation": "partial",
+        "threat-hunting": "yes",
+        "siem-integration": "yes",
+        "automated-response": "yes",
+        "cross-platform": "yes"
+      }
+    }
+  },
+  "SIEM": {
+    "summary": "Security Information & Event Management: centraliza logs, correlaciona eventos e sustenta a detecção e a resposta do SOC.",
+    "capabilities": [
+      {
+        "id": "log-collection",
+        "name": "Coleta e normalização de logs",
+        "desc": "Ingestão de fontes diversas com parsing e normalização."
+      },
+      {
+        "id": "correlation",
+        "name": "Correlação de eventos",
+        "desc": "Regras e correlação para gerar alertas de incidentes."
+      },
+      {
+        "id": "ueba",
+        "name": "Análise de comportamento (UEBA)",
+        "desc": "Detecção de anomalias de usuários e entidades."
+      },
+      {
+        "id": "threat-intel",
+        "name": "Threat intelligence",
+        "desc": "Enriquecimento de eventos com inteligência de ameaças."
+      },
+      {
+        "id": "dashboards",
+        "name": "Dashboards e relatórios",
+        "desc": "Visualizações e relatórios operacionais e executivos."
+      },
+      {
+        "id": "soar",
+        "name": "Automação de resposta (SOAR)",
+        "desc": "Playbooks de orquestração e resposta a incidentes."
+      },
+      {
+        "id": "long-retention",
+        "name": "Retenção de longo prazo",
+        "desc": "Armazenamento de logs por períodos exigidos por compliance."
+      }
+    ]
+  },
+  "WAF": {
+    "summary": "Web Application Firewall: protege aplicações web inspecionando o tráfego HTTP/S contra ataques na camada de aplicação.",
+    "capabilities": [
+      {
+        "id": "owasp-protection",
+        "name": "Proteção OWASP Top 10",
+        "desc": "Bloqueio de injeção, XSS e demais ataques do OWASP Top 10."
+      },
+      {
+        "id": "managed-rules",
+        "name": "Regras gerenciadas",
+        "desc": "Conjuntos de regras mantidos e atualizados pelo fornecedor."
+      },
+      {
+        "id": "bot-mitigation",
+        "name": "Mitigação de bots",
+        "desc": "Identifica e bloqueia tráfego automatizado malicioso."
+      },
+      {
+        "id": "ddos-l7",
+        "name": "Proteção DDoS camada 7",
+        "desc": "Mitigação de ataques volumétricos na camada de aplicação."
+      },
+      {
+        "id": "api-protection",
+        "name": "Proteção de APIs",
+        "desc": "Defesa específica para endpoints de API."
+      },
+      {
+        "id": "virtual-patching",
+        "name": "Virtual patching",
+        "desc": "Mitiga vulnerabilidades conhecidas sem alterar a aplicação."
+      },
+      {
+        "id": "custom-rules",
+        "name": "Regras customizadas",
+        "desc": "Criação de regras próprias para o contexto da aplicação."
+      }
+    ]
+  },
+  "CMDB": {
+    "summary": "Configuration Management Database: inventário central de itens de configuração (CIs) e suas relações, base para ITSM e gestão de ativos.",
+    "capabilities": [
+      {
+        "id": "ci-inventory",
+        "name": "Inventário de CIs",
+        "desc": "Cadastro central de itens de configuração."
+      },
+      {
+        "id": "auto-discovery",
+        "name": "Descoberta automática",
+        "desc": "Identificação automática de ativos no ambiente."
+      },
+      {
+        "id": "dependency-mapping",
+        "name": "Mapeamento de dependências",
+        "desc": "Relações entre CIs e impacto entre componentes."
+      },
+      {
+        "id": "service-mapping",
+        "name": "Mapeamento de serviços",
+        "desc": "Visão dos serviços de negócio e seus CIs de apoio."
+      },
+      {
+        "id": "itsm-integration",
+        "name": "Integração com ITSM",
+        "desc": "Conexão com incidentes, mudanças e problemas."
+      },
+      {
+        "id": "reconciliation",
+        "name": "Reconciliação de dados",
+        "desc": "Consolidação de múltiplas fontes evitando duplicidade."
+      },
+      {
+        "id": "normalization",
+        "name": "Normalização (CMDB health)",
+        "desc": "Padronização e qualidade contínua dos dados."
+      }
+    ]
+  }
+}

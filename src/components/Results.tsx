@@ -1,9 +1,21 @@
 // Ranked recommendations with the "why it fits" rationale for each solution.
+import { useState } from 'react';
 import { SIZE_LABELS } from '../lib/match';
-import type { Answers, ScoredSolution } from '../lib/types';
+import { estimateAnnualCost, formatCostRange } from '../lib/cost';
+import { shareUrl } from '../lib/share';
+import type { Answers, CompanySize, ScoredSolution } from '../lib/types';
 import { Button, Pill, RatingDots } from './ui';
 
-function ResultCard({ item, rank }: { item: ScoredSolution; rank: number }) {
+// Representative seat count per company size, for the illustrative cost line.
+const SIZE_SEATS: Record<CompanySize, number> = {
+  micro: 30,
+  small: 120,
+  medium: 500,
+  large: 2500,
+  enterprise: 8000,
+};
+
+function ResultCard({ item, rank, seats }: { item: ScoredSolution; rank: number; seats: number }) {
   const { solution, score, reasons, caveats } = item;
   const top = rank === 1;
   return (
@@ -31,6 +43,13 @@ function ResultCard({ item, rank }: { item: ScoredSolution; rank: number }) {
         <Pill>{solution.priceRange}</Pill>
         <RatingDots value={solution.marketRating} />
       </div>
+
+      <p className="mt-3 text-sm text-slate-400">
+        Custo anual estimado (~{seats} seats):{' '}
+        <span className="font-medium text-emerald-300">
+          {formatCostRange(estimateAnnualCost(solution.priceRange, seats))}
+        </span>
+      </p>
 
       {reasons.length > 0 && (
         <ul className="mt-4 space-y-1.5">
@@ -84,6 +103,19 @@ export function Results({
   answers: Answers;
   onRestart: () => void;
 }) {
+  const [copied, setCopied] = useState(false);
+  const seats = SIZE_SEATS[answers.size];
+
+  async function copyLink() {
+    try {
+      await navigator.clipboard.writeText(shareUrl(answers));
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
+    } catch {
+      setCopied(false);
+    }
+  }
+
   return (
     <div className="space-y-5">
       <div className="panel flex flex-wrap items-center justify-between gap-4">
@@ -97,9 +129,17 @@ export function Results({
             {answers.compliance.length > 0 && ` · ${answers.compliance.join(', ')}`}
           </p>
         </div>
-        <Button variant="ghost" onClick={onRestart}>
-          Nova consulta
-        </Button>
+        <div className="flex flex-wrap items-center gap-2 print:hidden">
+          <Button variant="ghost" onClick={copyLink}>
+            {copied ? 'Link copiado ✓' : 'Copiar link'}
+          </Button>
+          <Button variant="ghost" onClick={() => window.print()}>
+            Imprimir / PDF
+          </Button>
+          <Button variant="ghost" onClick={onRestart}>
+            Nova consulta
+          </Button>
+        </div>
       </div>
 
       {results.length === 0 ? (
@@ -109,7 +149,7 @@ export function Results({
       ) : (
         <div className="grid gap-4">
           {results.map((item, i) => (
-            <ResultCard key={item.solution.id} item={item} rank={i + 1} />
+            <ResultCard key={item.solution.id} item={item} rank={i + 1} seats={seats} />
           ))}
         </div>
       )}

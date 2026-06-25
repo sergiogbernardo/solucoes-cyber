@@ -7,6 +7,21 @@ export interface Capability {
   supported: number;
 }
 
+export type CapabilityLevel = 'yes' | 'partial' | 'no';
+
+/** One expected capability of a component (e.g. "host isolation" for EDR). */
+export interface ComponentCapability {
+  id: string;
+  name: string;
+  desc: string;
+}
+
+/** Reference checklist for a component category. */
+export interface ComponentSpec {
+  summary: string;
+  capabilities: ComponentCapability[];
+}
+
 export interface Solution {
   id: string;
   vendor: string;
@@ -22,6 +37,8 @@ export interface Solution {
   website: string | null;
   components: string[];
   capabilities: Capability[];
+  /** Per-capability support against the component checklist, where mapped. */
+  capabilitySupport?: Record<string, CapabilityLevel>;
 }
 
 export interface CategoryInfo {
@@ -40,6 +57,7 @@ export interface Catalog {
   source: string;
   groups: GroupInfo[];
   categories: CategoryInfo[];
+  componentCapabilities: Record<string, ComponentSpec>;
   solutions: Solution[];
 }
 
