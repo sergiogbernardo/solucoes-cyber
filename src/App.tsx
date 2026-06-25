@@ -4,6 +4,7 @@ import TopBar from './components/TopBar';
 import Hero from './components/Hero';
 import { Catalog } from './components/Catalog';
 import { Comparator } from './components/Comparator';
+import { Glossary } from './components/Glossary';
 import { Results } from './components/Results';
 import { Wizard } from './components/Wizard';
 import { Button } from './components/ui';
@@ -15,6 +16,7 @@ import type { Answers } from './lib/types';
 const TABS = [
   { id: 'catalog', label: 'Catálogo' },
   { id: 'finder', label: 'Encontrar solução' },
+  { id: 'glossary', label: 'Glossário' },
 ] as const;
 
 type TabId = (typeof TABS)[number]['id'];
@@ -107,6 +109,8 @@ export default function App() {
                 <Wizard onSubmit={setAnswers} />
               </div>
             ))}
+
+          {tab === 'glossary' && <Glossary />}
         </main>
 
         <footer className="border-t border-emerald-500/10 py-6 text-center font-mono text-xs text-slate-600 print:hidden">

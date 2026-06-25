@@ -12,16 +12,18 @@ Part of the [project hub](https://sergiogbernardo.github.io/), alongside
 
 ## How it works
 
-Two views, switchable by tab:
+Three views, switchable by tab:
 
 - **Catálogo** (main) — the full, browsable catalog of every solution. Search by
-  product, vendor or category, filter by area and sort. Each card expands the
-  component's reference checklist ("what an EDR must do"). Pick 2–4 solutions to
+  product, vendor or category, filter by area and sort. Pick 2–4 solutions to
   **compare side by side** — attributes, illustrative annual cost per seat and
   the component capability matrix.
 - **Encontrar solução** — a guided wizard, one question per matching dimension,
   that returns a ranked shortlist for your scenario, with an illustrative cost
   estimate, a **shareable link** and **print/PDF** export.
+- **Glossário** — each component once: what it is and the capabilities expected
+  from it ("what an EDR must do"). Keeps the reference in one place instead of
+  repeating it on every card.
 
 ### Component capabilities
 

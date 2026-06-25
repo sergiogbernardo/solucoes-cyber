@@ -2,10 +2,9 @@
 // vendor or category, filter by area (group), sort, and pick solutions to
 // compare. Each card can expand the component's reference capability checklist.
 import { useMemo, useState } from 'react';
-import { catalog, componentSpec, groupLabel } from '../lib/catalog';
+import { catalog, groupLabel } from '../lib/catalog';
 import type { Solution } from '../lib/types';
 import { Chip, Pill, RatingDots } from './ui';
-import { CapabilityChecklist } from './CapabilityMatrix';
 
 type SortKey = 'rating' | 'name';
 
@@ -18,7 +17,6 @@ function SolutionCard({
   selected: boolean;
   onToggleSelect: (id: string) => void;
 }) {
-  const spec = componentSpec(solution.category);
   return (
     <article className="panel flex flex-col gap-3">
       <div className="flex items-start justify-between gap-3">
@@ -37,18 +35,6 @@ function SolutionCard({
         <Pill>{solution.priceRange}</Pill>
         <span className="font-mono text-xs text-slate-500">{groupLabel(solution.group)}</span>
       </div>
-
-      {spec && (
-        <details className="group rounded-xl border border-white/10 bg-white/[0.02] px-3 py-2">
-          <summary className="cursor-pointer list-none text-sm font-medium text-emerald-300/90">
-            O que um {solution.category} faz
-            <span className="ml-1 text-slate-500 group-open:hidden">▾</span>
-            <span className="ml-1 hidden text-slate-500 group-open:inline">▴</span>
-          </summary>
-          <p className="mb-3 mt-2 text-xs text-slate-400">{spec.summary}</p>
-          <CapabilityChecklist spec={spec} />
-        </details>
-      )}
 
       <div className="mt-auto flex items-center justify-between pt-1">
         {solution.website ? (
