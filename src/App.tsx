@@ -65,7 +65,7 @@ export default function App() {
           <TopBar />
         </div>
 
-        <main className="mx-auto w-full max-w-7xl px-4 py-10 lg:px-6">
+        <main className="mx-auto w-full max-w-[1800px] px-4 py-10 lg:px-6">
           <div className="print:hidden">
             <Hero />
 
@@ -117,7 +117,7 @@ export default function App() {
 
       {showTray && (
         <div className="fixed inset-x-0 bottom-0 z-30 border-t border-emerald-500/20 bg-black/85 backdrop-blur-md print:hidden">
-          <div className="mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-3 px-4 py-3 lg:px-6">
+          <div className="mx-auto flex max-w-[1800px] flex-wrap items-center justify-between gap-3 px-4 py-3 lg:px-6">
             <p className="text-sm text-slate-300">
               {selectedIds.length} selecionada{selectedIds.length > 1 ? 's' : ''} para comparar
               <span className="text-slate-500"> (máx. {MAX_COMPARE})</span>
