@@ -3,7 +3,7 @@ const HUB_URL = 'https://sergiogbernardo.github.io/';
 export default function TopBar() {
   return (
     <header className="sticky top-0 z-20 border-b border-emerald-500/10 bg-black/60 backdrop-blur-md">
-      <div className="mx-auto flex max-w-5xl items-center justify-between gap-4 px-4 py-3 lg:px-6">
+      <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-3 lg:px-6">
         <div className="flex items-baseline gap-3">
           <span className="font-display text-lg font-bold tracking-tight text-emerald-300">
             Soluções Cyber
