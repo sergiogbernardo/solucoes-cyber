@@ -6,9 +6,9 @@ budget, ecosystem and compliance — and get a ranked shortlist of solutions tha
 fit your scenario, with a "why it fits" rationale, **entirely in the browser**.
 There is no backend.
 
-Part of the [project hub](https://sergiogbernardo.github.io/), alongside
-[Headersvg](https://sergiogbernardo.github.io/Headersvg/) and
-[Scanvg](https://sergiogbernardo.github.io/Scanvg/).
+Part of the [project hub](https://sabion.io/), alongside
+[Headersvg](https://sabion.io/Headersvg/) and
+[Scanvg](https://sabion.io/Scanvg/).
 
 ## How it works
 
